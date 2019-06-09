@@ -14,8 +14,7 @@ public class Controller {
 
         model.setRange(Barriers.MIN_BARRIER, Barriers.MAX_BARRIER);
 
-        System.out.println(model.getSecretNumber());//TODO
-
+        System.out.println(model.getSecretNumber());
         while (model.rangeNumber(readData(scanner)));
 
         view.printMessage(View.GAME_OVER + model.getSecretNumber());
@@ -23,7 +22,7 @@ public class Controller {
     }
 
     private int readData(Scanner scanner){
-        int res = 0; //TODO
+        int res;
         view.printMessage(printComment());
         while (true) {
             while (!scanner.hasNextInt()) {
