@@ -4,12 +4,13 @@ import java.util.List;
 public class Model {
     private int minBarrier;
     private int maxBarrier;
-    final int secretNumber = setSecretNumber(maxBarrier);
+    final int secretNumber = setSecretNumber(Barriers.MIN_BARRIER, Barriers.MAX_BARRIER);
 
     private List<Integer> inputHistory = new ArrayList<>();
 
-    public static int setSecretNumber(int maxBarrier){//TODO
-        return (int) (Math.random() * maxBarrier + maxBarrier);
+    public static int setSecretNumber(int minBarrier, int maxBarrier){
+        maxBarrier -= minBarrier;
+        return (int) (Math.random() * maxBarrier + minBarrier);
     }
 
     public boolean rangeNumber(int number){
